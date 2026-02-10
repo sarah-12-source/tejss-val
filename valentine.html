@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For Big Tejss 🖤</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<audio autoplay loop>
+    <source src="romantic.mp3" type="audio/mpeg">
+</audio>
+
+<div class="overlay"></div>
+
+<div class="container">
+    <h1 id="text">3</h1>
+
+    <div id="buttons" class="buttons">
+        <button class="yes" onclick="yesClicked()">YES 🖤</button>
+        <button class="no" id="noBtn">NO 😏</button>
+    </div>
+</div>
+
+<script>
+let count = 3;
+let text = document.getElementById("text");
+let buttons = document.getElementById("buttons");
+let noBtn = document.getElementById("noBtn");
+
+buttons.style.display = "none";
+
+let countdown = setInterval(() => {
+    count--;
+    if (count > 0) {
+        text.innerHTML = count;
+    } else {
+        clearInterval(countdown);
+        text.innerHTML = "Big Tejss... 🖤<br>Will you be my Valentine?";
+        buttons.style.display = "block";
+    }
+}, 1000);
+
+function yesClicked() {
+    text.innerHTML = "You belong with me, Big Tejss 🖤🌹";
+    buttons.style.display = "none";
+}
+
+noBtn.addEventListener("mouseover", function() {
+    let x = Math.random() * 300;
+    let y = Math.random() * 80;
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+});
+</script>
+
+</body>
+</html>
